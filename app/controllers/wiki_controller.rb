@@ -13,7 +13,7 @@ class WikiController < ApplicationController
     @wiki= Wiki.create(wiki)
 
     if @wiki.persisted?
-      redirect_to url_for(controller: :wiki, action: :new), flash: {success: "#{params[:wiki][:name]}を作成しました"}
+      redirect_to url_for(controller: :wiki, action: :index), flash: {success: "#{params[:wiki][:name]}を作成しました"}
     else
       render action: :new
     end
