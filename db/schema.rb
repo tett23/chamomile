@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string :name, null: false
     t.string :slug, null: false
     t.text :description
-    t.string :user_id, null: false
+    t.integer :user_id, null: false
     t.timestamp
   end
 
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string :name, null: false
     t.string :slug
     t.text :body
+    t.integer :wiki_id, null: false
     t.integer :parent_id
     t.timestamp
   end
