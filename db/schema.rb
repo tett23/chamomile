@@ -21,7 +21,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.string :slug, null: false
     t.text :description
     t.integer :user_id, null: false
-    t.timestamp
+    t.datetime :updated_at
+    t.datetime :created_at
   end
 
   add_index :wikis, :slug
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.text :body
     t.integer :wiki_id, null: false
     t.integer :parent_id
-    t.timestamp
+    t.datetime :updated_at
+    t.datetime :created_at
   end
 end
