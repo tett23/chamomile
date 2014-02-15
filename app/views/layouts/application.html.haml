@@ -11,4 +11,6 @@
   %body
     =render partial: 'parts/header'
     #main.container
+      -unless @current_wiki.nil?
+        =render partial: 'parts/wiki_header'
       =yield

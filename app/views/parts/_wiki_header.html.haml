@@ -1,0 +1,7 @@
+#wiki_nav.navbar.navbar-default{role: 'navigation'}
+  .container-fluid
+    .navbar-header
+      =link_to @current_wiki.slug, url_for(controller: :pages, action: :index, wiki_slug: @current_wiki.slug), class: 'navbar-brand'
+    .navbar-collapse.collapse
+      %ul.nav.navbar-nav
+      %ul.nav.navbar-nav.navbar-right

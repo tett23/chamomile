@@ -16,7 +16,9 @@ Chamomile::Application.routes.draw do
   delete '/wiki/:slug', to: 'wiki#destroy'
 
   get '/wiki/:wiki_slug', to: 'pages#index'
-  #get '/:wiki/:page_name', to: 'pages#show'
+  get '/wiki/:wiki_slug/new', to: 'pages#new'
+  post '/wiki/:wiki_slug', to: 'pages#create'
+  get '/wiki/:wiki_slug/:flagment', to: 'pages#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

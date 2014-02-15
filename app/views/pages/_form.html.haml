@@ -1,0 +1,9 @@
+.form-group
+  =f.text_area :body, value: (@page.body.empty? ? @page.concat : @page.body), rows: 20, class: 'form-control'
+.form-group
+  %label{for: 'page[slug]'}slug
+  =f.text_field :slug, class: 'form-control'
+.form-group
+  =f.hidden_field :name
+  =f.submit 'submit', class: 'btn btn-submit'
+  =button_link 'cancel', url_for(controller: :pages, action: :index, wiki_slug: @current_wiki.slug)
