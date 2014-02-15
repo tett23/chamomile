@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_filter :fetch_wiki
 
   def index
-    @page = Page.find_by(slug: 'index')
+    @page = Page.find_by_wiki_slug_and_flagment(@current_wiki.slug, :index)
 
     if @page.nil?
       @page = Page.new(name: @current_wiki.name, slug: 'index', wiki_id: @current_wiki.id, body: '')

@@ -9,7 +9,7 @@ Chamomile::Application.routes.draw do
 
   #resources :wiki
   get '/wiki', to: 'wiki#index'
-  get '/wiki', to: 'wiki#new'
+  get '/wiki/new', to: 'wiki#new'
   post '/wiki', to: 'wiki#create'
   get '/wiki/:slug/edit', to: 'wiki#edit'
   put '/wiki/:slug', to: 'wiki#update'
