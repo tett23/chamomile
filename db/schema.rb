@@ -18,12 +18,13 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table :wikis, force: true do |t|
     t.string :name, null: false
+    t.string :slug, null: false
     t.text :description
     t.string :user_id, null: false
     t.timestamp
   end
 
-  add_index :wikis, :name
+  add_index :wikis, :slug
   add_index :wikis, :user_id
 
   create_table :pages, force: true do |t|

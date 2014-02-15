@@ -21,6 +21,6 @@ class WikiController < ApplicationController
 
   private
   def permited_params
-    params.require(:wiki).permit(:name, :description)
+    params.require(:wiki).permit(:name, :slug, :description)
   end
 end
