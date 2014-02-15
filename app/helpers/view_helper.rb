@@ -20,4 +20,8 @@ EOS
 
     Haml::Engine.new(haml).render(Object.new, :attributes=>attributes)
   end
+
+  def textile(text)
+    RedCloth.new(text).to_html
+  end
 end

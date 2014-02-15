@@ -25,6 +25,8 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 
+gem 'RedCloth'
+
 group :development do
   gem 'thin'
   gem 'erb2haml'

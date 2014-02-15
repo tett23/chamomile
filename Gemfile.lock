@@ -9,6 +9,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    RedCloth (4.2.9)
     actionmailer (4.0.2)
       actionpack (= 4.0.2)
       mail (~> 2.5.4)
@@ -179,6 +180,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
   bootstrap-sass-rails
   coffee-rails (~> 4.0.0)
   database_cleaner
