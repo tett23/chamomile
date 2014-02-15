@@ -7,7 +7,16 @@ Chamomile::Application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  resources :wiki
+  #resources :wiki
+  get '/wiki', to: 'wiki#index'
+  get '/wiki', to: 'wiki#new'
+  post '/wiki', to: 'wiki#create'
+  get '/wiki/:slug/edit', to: 'wiki#edit'
+  put '/wiki/:slug', to: 'wiki#update'
+  delete '/wiki/:slug', to: 'wiki#destroy'
+
+  get '/wiki/:wiki_slug', to: 'pages#index'
+  #get '/:wiki/:page_name', to: 'pages#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

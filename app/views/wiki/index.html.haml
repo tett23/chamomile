@@ -1,7 +1,7 @@
 .row
   .pull-right
     .btn-group
-      =button_link 'create wiki', new_wiki_path, glyph: :plus
+      =button_link 'create wiki', url_for(controller: :wiki, action: :new), glyph: :plus
 
 .row
   %table.table.table-striped.table-bordered
@@ -11,5 +11,5 @@
         %td description
     -@wiki.each do |wiki|
       %tr
-        %td=wiki.name
+        %td=link_to wiki.name, url_for(controller: :pages, action: :index, wiki_slug: wiki.slug)
         %td=wiki.description

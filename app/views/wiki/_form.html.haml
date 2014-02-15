@@ -8,4 +8,4 @@
   =f.text_area :description, rows: 20, class: 'form-control'
 .form-group
   =f.submit 'submit', class: 'btn btn-submit'
-  =button_link 'cancel', wiki_index_path
+  =button_link 'cancel', url_for(controller: :wiki, action: :index)
