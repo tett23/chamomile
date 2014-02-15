@@ -4,5 +4,6 @@
       =link_to 'Chamomile', '/', class: 'navbar-brand'
     .navbar-collapse.collapse
       %ul.nav.navbar-nav
+        %li=link_to 'wiki', url_for(controller: :wiki, action: :index)
       %ul.nav.navbar-nav.navbar-right
         %li=link_to 'settings', '#'
