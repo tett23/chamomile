@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.text :body
     t.integer :wiki_id, null: false
     t.integer :parent_id
+    t.integer :user_id, null: false
     t.datetime :updated_at
     t.datetime :created_at
   end

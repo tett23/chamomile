@@ -22,7 +22,7 @@ class PagesController < ApplicationController
   end
 
   def create
-    @page = Page.new(permited_params.merge(wiki_id: @current_wiki.id))
+    @page = Page.new(permited_params.merge(wiki_id: @current_wiki.id, user_id: current_user.id))
     @page.estimate_name()
     @page.save()
 
