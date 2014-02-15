@@ -29,6 +29,8 @@ group :development do
   gem 'thin'
   gem 'erb2haml'
   gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'seed-fu', github: 'mbleigh/seed-fu'
 end
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
