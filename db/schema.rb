@@ -15,4 +15,20 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   add_index :users, :username
+
+  create_table :wikis, force: true do |t|
+    t.string :name, null: false
+    t.string :user_id, null: false
+    t.timestamp
+  end
+
+  add_index :wikis, :name
+  add_index :wikis, :user_id
+
+  create_table :pages, force: true do |t|
+    t.string :name, null: false
+    t.string :slug
+    t.integer :parent_id
+    t.timestamp
+  end
 end
