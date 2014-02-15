@@ -63,6 +63,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def list
+    @pages = Page.where(wiki_id: @current_wiki.id)
+  end
+
   private
   def fetch_wiki
     @current_wiki = Wiki.find_by(slug: params[:wiki_slug])

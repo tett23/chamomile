@@ -4,4 +4,5 @@
       =link_to @current_wiki.slug, url_for(controller: :pages, action: :index, wiki_slug: @current_wiki.slug), class: 'navbar-brand'
     .navbar-collapse.collapse
       %ul.nav.navbar-nav
+        %li=link_to 'list', url_for(controller: :pages, action: :list, wiki_slug: @current_wiki.slug)
       %ul.nav.navbar-nav.navbar-right

@@ -16,6 +16,7 @@ Chamomile::Application.routes.draw do
   delete '/wiki/:slug', to: 'wiki#destroy'
 
   get '/wiki/:wiki_slug', to: 'pages#index'
+  get '/wiki/:wiki_slug/list', to: 'pages#list'
   get '/wiki/:wiki_slug/new', to: 'pages#new'
   post '/wiki/:wiki_slug', to: 'pages#create'
   get '/wiki/:wiki_slug/:flagment', to: 'pages#show'
