@@ -28,6 +28,7 @@ gem 'omniauth-twitter'
 group :development do
   gem 'thin'
   gem 'erb2haml'
+  gem 'rspec-rails'
 end
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
