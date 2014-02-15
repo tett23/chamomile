@@ -37,4 +37,8 @@ class Page < ActiveRecord::Base
   def flagment
     self.slug || self.name
   end
+
+  def self.recent_edit(user_id, count=5)
+    Page.where(user_id: user_id).order(updated_at: :desc).limit(count)
+  end
 end

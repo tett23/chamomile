@@ -1,3 +1,7 @@
 -unless user_signed_in?
   =link_to 'login', user_omniauth_authorize_path(:twitter)
-aa
+-else
+  %h2 最近編集したページ
+  %ul
+    -@pages.each do |page|
+      %li=link_to "#{page.wiki.name}/#{page.name}", url_for(controller: :pages, action: :show, wiki_slug: page.wiki.slug, flagment: page.flagment)
