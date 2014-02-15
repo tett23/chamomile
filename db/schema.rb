@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table :wikis, force: true do |t|
     t.string :name, null: false
+    t.text :description
     t.string :user_id, null: false
     t.timestamp
   end
