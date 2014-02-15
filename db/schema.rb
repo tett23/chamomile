@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 0) do
   create_table :pages, force: true do |t|
     t.string :name, null: false
     t.string :slug
+    t.text :body
     t.integer :parent_id
     t.timestamp
   end
