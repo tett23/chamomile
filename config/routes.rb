@@ -19,6 +19,9 @@ Chamomile::Application.routes.draw do
   get '/wiki/:wiki_slug/new', to: 'pages#new'
   post '/wiki/:wiki_slug', to: 'pages#create'
   get '/wiki/:wiki_slug/:flagment', to: 'pages#show'
+  get '/wiki/:wiki_slug/:flagment/edit', to: 'pages#edit'
+  put '/wiki/:wiki_slug/:flagment', to: 'pages#update'
+  patch '/wiki/:wiki_slug/:flagment', to: 'pages#update'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

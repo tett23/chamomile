@@ -1,1 +1,6 @@
+.row
+  .pull-right
+    .btn-group
+      =button_link 'edit', url_for(controller: :pages, action: :edit, wiki_slug: @current_wiki.slug, flagment: @page.flagment), glyph: :edit
+
 !=wiki_format @page.body

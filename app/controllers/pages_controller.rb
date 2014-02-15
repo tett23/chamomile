@@ -38,6 +38,31 @@ class PagesController < ApplicationController
     end
   end
 
+  def edit
+    @page = Page.find_by_wiki_slug_and_flagment(@current_wiki.slug, params[:flagment])
+    return render status: 404 if @page.nil?
+  end
+
+  def update
+    @page = Page.find_by_wiki_slug_and_flagment(@current_wiki.slug, params[:flagment])
+    page = permited_params()
+    @page.slug = page[:slug]
+    @page.body = page[:body]
+    @page.estimate_name()
+    @page.save()
+
+    if @page.persisted?
+      redirect_to url_for(
+        controller: :pages,
+        action: :show,
+        wiki_slug: @current_wiki.slug,
+        flagment: @page.flagment
+      ), flash: {success: "#{@page.name}を編集しました"}
+    else
+      render action: :edit
+    end
+  end
+
   private
   def fetch_wiki
     @current_wiki = Wiki.find_by(slug: params[:wiki_slug])
