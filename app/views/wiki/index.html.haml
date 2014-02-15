@@ -1,0 +1,15 @@
+.row
+  .pull-right
+    .btn-group
+      =button_link 'create wiki', new_wiki_path, glyph: :plus
+
+.row
+  %table.table.table-striped.table-bordered
+    %thead
+      %tr
+        %td name
+        %td description
+    -@wiki.each do |wiki|
+      %tr
+        %td=wiki.name
+        %td=wiki.description

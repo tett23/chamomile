@@ -1,0 +1,8 @@
+.form-group
+  %label{for: :name}name
+  =f.text_field :name, class: 'form-control'
+.form-group
+  %label{for: 'wiki[description]'}description
+  =f.text_area :description, rows: 20, class: 'form-control'
+.form-group
+  =f.submit 'submit', class: 'btn btn-submit'
