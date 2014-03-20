@@ -10,7 +10,11 @@
     = csrf_meta_tags
   %body
     =render partial: 'parts/header'
-    #main.container
-      -unless @current_wiki.nil?
-        =render partial: 'parts/wiki_header'
+    -if user_signed_in?
+      %section#main.container{v: {on: 'click: data.recent'}}
+        -unless @current_wiki.nil?
+          =render partial: 'parts/wiki_header'
+        =yield
+        {{> recent}}
+    -else
       =yield

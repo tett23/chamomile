@@ -1,0 +1,7 @@
+%section#recent{v: {on: 'load: data.recent, click: data.recent'}}
+  %h2 最近編集したページ　
+  %ul
+    %li{v: {repeat: 'recentItems'}, class: 'recent-item{{$index}}'}
+      {{name}}
+
+

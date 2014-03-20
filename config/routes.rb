@@ -7,6 +7,11 @@ Chamomile::Application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
+  namespace :api do
+    get '/pages/recent.:format', to: 'pages#recent'
+    get '/templates/recent.:format', to: 'templates#recent'
+  end
+
   #resources :wiki
   get '/wiki', to: 'wiki#index'
   get '/wiki/new', to: 'wiki#new'
