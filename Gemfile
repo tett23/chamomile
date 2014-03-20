@@ -27,6 +27,8 @@ gem 'omniauth-twitter'
 
 gem 'RedCloth'
 
+gem 'bower-rails'
+
 group :development do
   gem 'thin'
   gem 'erb2haml'
